@@ -11,7 +11,7 @@ public class DesafioLerArquivo {
 	public DesafioLerArquivo() {
 		
 		try {
-			arquivo = new FileReader("C:\\Users\\Raul\\Documents\\Champ Lol.txt");
+			arquivo = new FileReader("C:\\Users\\Raul\\Desktop\\teste.txt");
 			buffer = new BufferedReader(arquivo);
 			
 			while (buffer.ready()) {
