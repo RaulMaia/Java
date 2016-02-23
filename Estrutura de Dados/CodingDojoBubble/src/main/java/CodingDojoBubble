@@ -73,8 +73,6 @@ public class CodingDojoBubble {
 				resultado += "dezoito";
 			} else if (a == 19) {
 				resultado += "dezenove";
-			} else if (a == 100) {
-				resultado += "cem";
 			} else if (a == 1000) {
 				resultado += "mil";
 			}
