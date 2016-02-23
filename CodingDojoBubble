@@ -1,0 +1,260 @@
+package br.com.exercicio.CodingDojoBubble;
+
+import java.util.Scanner;
+
+public class CodingDojoBubble {
+
+	public static int[] quebrarNumero(int a) {
+
+		String converteString = String.valueOf(a);
+		String[] valor = converteString.split("");
+		int[] array = new int[converteString.length()];
+
+		for (int i = 0; i < valor.length; i++) {
+			array[i] = Integer.parseInt(valor[i]);
+		}
+
+		return array;
+	}
+
+	public static int voltaNumero(int[] a) {
+
+		String numeroVoltado = "";
+
+		for (int i = 0; i < a.length; i++) {
+			numeroVoltado += a[i];
+		}
+
+		int x = Integer.parseInt(numeroVoltado);
+
+		return x;
+
+	}
+
+	public static int[] ordenaArray(int[] valor) {
+
+		for (int i = 0; i < valor.length; i++) {
+			for (int j = i + 1; j < valor.length; j++) {
+				if (valor[i] < valor[j]) {
+					int arrayAux = valor[i];
+					valor[i] = valor[j];
+					valor[j] = arrayAux;
+				}
+			}
+		}
+
+		return valor;
+	}
+
+	public static String transformaExtenso(int a) {
+
+		String resultado = "";
+
+		if (a == 0) {
+			resultado += "zero";
+		} else if ((a >= 10 && a <= 19) || (a == 1000)) {
+			if (a == 10) {
+				resultado += "dez";
+			} else if (a == 11) {
+				resultado += "onze";
+			} else if (a == 12) {
+				resultado += "doze";
+			} else if (a == 13) {
+				resultado += "treze";
+			} else if (a == 14) {
+				resultado += "catorze";
+			} else if (a == 15) {
+				resultado += "quinze";
+			} else if (a == 16) {
+				resultado += "dezesseis";
+			} else if (a == 17) {
+				resultado += "dezessete";
+			} else if (a == 18) {
+				resultado += "dezoito";
+			} else if (a == 19) {
+				resultado += "dezenove";
+			} else if (a == 100) {
+				resultado += "cem";
+			} else if (a == 1000) {
+				resultado += "mil";
+			}
+
+		} else {
+
+			int[] arrayAux = quebrarNumero(a);
+			int quantAlgarismo = arrayAux.length;
+
+			for (int i = 0; i < arrayAux.length; i++) {
+				if (i == (quantAlgarismo - 1)) {
+
+					if (quantAlgarismo >= 2 && arrayAux[i] != 0) {
+						resultado += " e ";
+					}
+
+					if (arrayAux[i] == 1) {
+						resultado += "um";
+					} else if (arrayAux[i] == 2) {
+						resultado += "dois";
+					} else if (arrayAux[i] == 3) {
+						resultado += "três";
+					} else if (arrayAux[i] == 4) {
+						resultado += "quatro";
+					} else if (arrayAux[i] == 5) {
+						resultado += "cinco";
+					} else if (arrayAux[i] == 6) {
+						resultado += "seis";
+					} else if (arrayAux[i] == 7) {
+						resultado += "sete";
+					} else if (arrayAux[i] == 8) {
+						resultado += "oito";
+					} else if (arrayAux[i] == 9) {
+						resultado += "nove";
+					}
+
+				} else if (i == (quantAlgarismo - 2)) {
+					if (quantAlgarismo >= 3 && arrayAux[i] != 0) {
+						resultado += " e ";
+					}
+
+					if (arrayAux[i] == 1) {
+						if (arrayAux[i + 1] == 0) {
+							resultado += "dez";
+						} else if (arrayAux[i + 1] == 1) {
+							resultado += "onze";
+						} else if (arrayAux[i + 1] == 2) {
+							resultado += "doze";
+						} else if (arrayAux[i + 1] == 3) {
+							resultado += "treze";
+						} else if (arrayAux[i + 1] == 4) {
+							resultado += "catorze";
+						} else if (arrayAux[i + 1] == 5) {
+							resultado += "quinze";
+						} else if (arrayAux[i + 1] == 6) {
+							resultado += "dezesseis";
+						} else if (arrayAux[i + 1] == 7) {
+							resultado += "dezessete";
+						} else if (arrayAux[i + 1] == 8) {
+							resultado += "dezoito";
+						} else {
+							resultado += "dezenove";
+						}
+						break;
+					} else if (arrayAux[i] == 2) {
+						resultado += "vinte";
+					} else if (arrayAux[i] == 3) {
+						resultado += "trinta";
+					} else if (arrayAux[i] == 4) {
+						resultado += "quarenta";
+					} else if (arrayAux[i] == 5) {
+						resultado += "cinquenta";
+					} else if (arrayAux[i] == 6) {
+						resultado += "sessenta";
+					} else if (arrayAux[i] == 7) {
+						resultado += "setenta";
+					} else if (arrayAux[i] == 8) {
+						resultado += "oitenta";
+					} else if (arrayAux[i] == 9) {
+						resultado += "noventa";
+					}
+
+				} else if (i == (quantAlgarismo - 3)) {
+					if ((quantAlgarismo >= 4 && arrayAux[i] != 0)) {
+						if (arrayAux[i + 1] == 0 && arrayAux[i + 2] == 0) {
+							resultado += " e ";
+						} else {
+							resultado += " , ";
+						}
+					}
+
+					if (arrayAux[i] == 1) {
+						if (arrayAux[i + 1] == 0 && arrayAux[i + 2] == 0) {
+							resultado += "cem";
+						} else {
+							resultado += "cento";
+						}
+					} else if (arrayAux[i] == 2) {
+						resultado += "duzentos";
+					} else if (arrayAux[i] == 3) {
+						resultado += "trezentos";
+					} else if (arrayAux[i] == 4) {
+						resultado += "quatrocentos";
+					} else if (arrayAux[i] == 5) {
+						resultado += "quinhentos";
+					} else if (arrayAux[i] == 6) {
+						resultado += "seicentos";
+					} else if (arrayAux[i] == 7) {
+						resultado += "setecentos";
+					} else if (arrayAux[i] == 8) {
+						resultado += "oitocentos";
+					} else if (arrayAux[i] == 9) {
+						resultado += "novecentos";
+					}
+
+				} else if (i == (quantAlgarismo - 4)) {
+
+					if (arrayAux[i] == 1) {
+						resultado += "mil";
+					} else if (arrayAux[i] == 2) {
+						resultado += "dois mil";
+					} else if (arrayAux[i] == 3) {
+						resultado += "três mil";
+					} else if (arrayAux[i] == 4) {
+						resultado += "quatro mil";
+					} else if (arrayAux[i] == 5) {
+						resultado += "cinco mil";
+					} else if (arrayAux[i] == 6) {
+						resultado += "seis mil";
+					} else if (arrayAux[i] == 7) {
+						resultado += "sete mil";
+					} else if (arrayAux[i] == 8) {
+						resultado += "oito mil";
+					} else if (arrayAux[i] == 9) {
+						resultado += "nove mil";
+					}
+
+				}
+			}
+		}
+
+		return resultado;
+	}
+
+	public static boolean numeroAprendido(int numero) {
+
+		boolean continua = true;
+
+		if (numero > 9999) {
+			continua = false;
+			System.out
+					.println("Não foi aprendido esse número.... Aguarde novas versões");
+			System.out.println();
+		} else {
+			continua = true;
+		}
+
+		return continua;
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner teclado = new Scanner(System.in);
+
+		while (true) {
+
+			System.out.println("Informe um numero: ");
+			int numero = teclado.nextInt();
+
+			if (numeroAprendido(numero) == true) {
+				int[] a = quebrarNumero(numero);
+				int[] b = ordenaArray(a);
+				int c = voltaNumero(b);
+				String d = transformaExtenso(c);
+
+				System.out.println("Numero é: " + c);
+				System.out.println("Nome por extenso: " + d);
+				System.out.println();
+			}
+		}
+	}
+}
