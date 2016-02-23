@@ -1,0 +1,573 @@
+package br.com.exercicio.CodingDojoBubble;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.Assert;
+
+public class CodingDojoBubbleTest {
+
+	/**
+	 * Testes para ordenação, ordenação decrescente 
+	 */
+
+	@Test
+	public void ordenaArrayTest() {
+
+		int[] numero = {2,1};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {2,1};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void ordenaArrayTest2() {
+
+		int[] numero = {1,2,3};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {3,2,1};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void ordenaArrayTest3() {
+
+		int[] numero = {4,4};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {4,4};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void ordenaArrayTest4() {
+
+		int[] numero = {4,7,4};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {7,4,4};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void ordenaArrayTest5() {
+
+		int[] numero = {2};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {2};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest6() {
+
+		int[] numero = {1,0,0,0};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {1,0,0,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest7() {
+
+		int[] numero = {1,0,0,1};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {1,1,0,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest8() {
+
+		int[] numero = {1,0,1,0};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {1,1,0,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest9() {
+
+		int[] numero = {1,1,0,0};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {1,1,0,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest10() {
+
+		int[] numero = {1,1,0,1};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {1,1,1,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest11() {
+
+		int[] numero = {1,1,1,0};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {1,1,1,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest12() {
+
+		int[] numero = {1,1,1,2};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {2,1,1,1};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest13() {
+
+		int[] numero = {1,2,3,0};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {3,2,1,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest14() {
+
+		int[] numero = {7,1,2,9};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {9,7,2,1};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void ordenaArrayTest15() {
+
+		int[] numero = {0,0,2,9};
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] resultado = dojo.ordenaArray(numero);
+		int[] esperado = {9,2,0,0};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	/**
+	 * Teste para converter int em int[]
+	 */
+
+	@Test
+	public void transformaEmArrayTest() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1;
+		int resultado[] = dojo.quebrarNumero(numero);
+		int esperado[] = {1};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void transformaEmArrayTest2() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 21;
+		int resultado[] = dojo.quebrarNumero(numero);
+		int esperado[] = {2,1};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void transformaEmArrayTest3() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 213;
+		int resultado[] = dojo.quebrarNumero(numero);
+		int esperado[] = {2,1,3};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void transformaEmArrayTest4() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 474;
+		int[] resultado = dojo.quebrarNumero(numero);
+		int[] esperado = {4,7,4};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void transformaEmArrayTest5() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 9876;
+		int[] resultado = dojo.quebrarNumero(numero);
+		int[] esperado = {9,8,7,6};
+		Assert.assertArrayEquals(esperado, resultado);
+
+	}
+
+	/**
+	 * Teste para converter int[] em int OBS: COLOCAR TESTE PARA 4 ALGARISMOS
+	 */
+
+	@Test
+	public void transformaEmNumeroTest() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] numero = {9};
+		int resultado = dojo.voltaNumero(numero);
+		int esperado = 9;
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void transformaEmNumeroTest2() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] numero = {5,4};
+		int resultado = dojo.voltaNumero(numero);
+		int esperado = 54;
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void transformaEmNumeroTest3() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] numero = {4,7,4};
+		int resultado = dojo.voltaNumero(numero);
+		int esperado = 474;
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void transformaEmNumeroTest4() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] numero = {0};
+		int resultado = dojo.voltaNumero(numero);
+		int esperado = 0;
+		Assert.assertEquals(esperado, resultado);
+
+	}
+	
+	@Test
+	public void transformaEmNumeroTest5() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int[] numero = {9,2,0,1};
+		int resultado = dojo.voltaNumero(numero);
+		int esperado = 9201;
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	/**
+	 * Teste escrita em extenso
+	 */
+
+	@Test
+	public void escreverExtensoTest() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 0;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "zero";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest2() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 10;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "dez";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest3() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 19;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "dezenove";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest4() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 20;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "vinte";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest5() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 102;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cento e dois";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest6() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 120;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cento e vinte";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest7() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 123;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cento e vinte e três";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest8() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 254;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "duzentos e cinquenta e quatro";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest9() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 519;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "quinhentos e dezenove";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest10() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 5000;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cinco mil";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest11() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 5100;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cinco mil e cem";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest12() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 5888;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cinco mil , oitocentos e oitenta e oito";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest13() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 5808;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "cinco mil , oitocentos e oito";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest14() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1002;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "mil e dois";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest15() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1010;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "mil e dez";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest16() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1100;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "mil e cem";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest17() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1120;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "mil , cento e vinte";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+
+	@Test
+	public void escreverExtensoTest18() {
+
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1126;
+		String resultado = dojo.transformaExtenso(numero);
+		String esperado = "mil , cento e vinte e seis";
+		Assert.assertEquals(esperado, resultado);
+
+	}
+	
+	/**
+	 * Teste de numeros existentes
+	 */
+	
+	@Test
+	public void numeroAprendidoTest() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertTrue(resultado);
+		
+	}
+	
+	@Test
+	public void numeroAprendidoTest2() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 10;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertTrue(resultado);
+		
+	}
+	
+	@Test
+	public void numeroAprendidoTest3() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 100;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertTrue(resultado);
+		
+	}
+	
+	@Test
+	public void numeroAprendidoTest4() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 1000;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertTrue(resultado);
+		
+	}
+	
+	@Test
+	public void numeroAprendidoTest5() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 9999;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertTrue(resultado);
+		
+	}
+	
+	@Test
+	public void numeroAprendidoTest6() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 10000;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertFalse(resultado);
+		
+	}
+	
+	@Test
+	public void numeroAprendidoTest7() {
+		
+		CodingDojoBubble dojo = new CodingDojoBubble();
+		int numero = 19873;
+		boolean resultado = dojo.numeroAprendido(numero);
+		Assert.assertFalse(resultado);
+		
+	}
+
+}
