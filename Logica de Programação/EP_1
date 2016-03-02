@@ -1,0 +1,75 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Cc52255123 {
+	
+	public static void receiveLogAndCoor(String[] coor, String[][] logHorm) {
+		
+		for (int i = 0; i < 100000; i++) {
+			for (int j = 0; j < 100; j++) {
+				if ((i >= 0 && i < 100000) && (j >= 0 && j < 100)) {
+					if (logHorm[i][j] != null) {
+						System.out.println(logHorm[i][j]);
+					} else {
+						System.out.println(-1);
+					}
+				} else {
+					System.out.println(-1);
+				}
+			}
+		}
+		
+	}
+
+	public static void main(String[] args) {
+
+		Cc52255123 coorLoghorm = new Cc52255123();
+		
+		try {
+			Coor coor = new Coor();
+			LogHorm loghorm = new LogHorm();
+			coorLoghorm.receiveLogAndCoor(coor.loadingCoor(),loghorm.loadingLogHorm());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}
+
+class LogHorm {
+	
+	public static String[][] loadingLogHorm() throws IOException {
+
+		BufferedReader bufferLog = new BufferedReader(new FileReader("C:\\Users\\Raul\\Desktop\\logHorm2"));
+
+		String[][] arrayLogHorm = new String[100000][100];
+
+		int i = 0;
+
+		while (bufferLog.ready()) {
+
+			String receiveLine = bufferLog.readLine();
+			String[] breakSpace = receiveLine.split(" ");
+			for (int k = 0; k < breakSpace.length; k++) {
+				arrayLogHorm[i][k] = breakSpace[k];
+			}
+			i++;
+		}
+		bufferLog.close();		
+		return arrayLogHorm;
+	}
+}
+
+class Coor {
+
+	public static String[] loadingCoor() throws IOException {
+
+		BufferedReader buffer = new BufferedReader(new FileReader("C:\\Users\\Raul\\Desktop\\coor.txt"));
+
+		String text = buffer.readLine();
+		buffer.close();
+
+		String[] coor = text.split(" ");
+		return coor;
+	}
+}
