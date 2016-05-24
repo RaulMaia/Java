@@ -1,4 +1,4 @@
-package br.com.exercicio.estrutura_de_dados;
+﻿package br.com.exercicio.estrutura_de_dados;
 
 import java.text.Normalizer;
 import java.util.Scanner;
@@ -20,7 +20,7 @@ public class BinarySearch {
 			
 			String nome = removeAccentuation(vector[middle]);
 
-			if (nome.equalsIgnoreCase(value)) {
+			if (nome.equalsIgnoreCase(value) || vector[middle].equalsIgnoreCase(value)) {
 				return "the index is " + String.valueOf(middle);
 			}
 			if (value.compareToIgnoreCase(vector[middle]) > 0) {
